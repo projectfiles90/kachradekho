@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   put '/notifications/:id/mark_as_read', to: 'notifications#mark_as_read'
   resources :products do
     resources :comments, only: [:create]
+    resources :likes, only: [:create, :update, :destroy]
   end
 
 end
